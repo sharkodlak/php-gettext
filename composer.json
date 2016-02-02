@@ -1,34 +1,44 @@
 {
-    "name": "sharkodlak/php-gettext",
-    "description": "PHP Gettext Library, allow to use translator object with more gettext methods, than in pure PHP.",
-    "keywords": [
-        "gettext",
-        "i18n",
-        "l10n",
-        "localization",
-        "translate"
-    ],
-    "homepage": "https://github.com/Sharkodlak/php-gettext",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Pavel Štětina",
-            "email": "github@shark.kom.cz",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "ext-gettext": "*",
-        "ext-pcre": "*",
-        "lib-pcre": "*"
-    },
-    "support": {
-        "issues": "https://github.com/sharkodlak/php-gettext/issues",
-        "wiki": "https://github.com/sharkodlak/php-gettext/wiki"
-    },
-    "autoload": {
-        "psr-4": {
-            "Sharkodlak\\Libs\\Gettext\\": "src/"
-        }
-    }
+	"name": "sharkodlak/php-gettext",
+	"description": "PHP Gettext Library, allow to use translator object with more gettext methods, than in pure PHP.",
+	"keywords": [
+		"gettext",
+		"i18n",
+		"l10n",
+		"localization",
+		"translate"
+	],
+	"homepage": "https://github.com/Sharkodlak/php-gettext",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Pavel Štětina",
+			"email": "github@shark.kom.cz",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.4.0",
+		"ext-gettext": "*",
+		"ext-pcre": "*",
+		"lib-pcre": "*"
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "*",
+		"phpmd/phpmd": "*",
+		"sebastian/phpcpd": "*",
+		"pdepend/pdepend": "*",
+		"phploc/phploc": "*",
+		"phpunit/phpunit": "*",
+		"theseer/phpdox": "*"
+	},
+	"support": {
+		"issues": "https://github.com/sharkodlak/php-gettext/issues",
+		"wiki": "https://github.com/sharkodlak/php-gettext/wiki"
+	},
+	"autoload": {
+		"psr-4": {
+			"Sharkodlak\\Libs\\Gettext\\": "src/"
+		}
+	}
 }
