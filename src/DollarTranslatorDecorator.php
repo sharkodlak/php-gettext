@@ -2,23 +2,19 @@
 
 namespace Sharkodlak\Gettext;
 
-
 /** Adds sprintf dollar notation if it's missing.
  **/
 class DollarTranslatorDecorator extends ATranslator {
 	private $translator;
 
-
-	static private function dollarReplace($message) {
+	static public function dollarReplace($message) {
 		// Replace %1 with %1$s, which is acceptable by sprintf. Skip %%, and do not translate %0 (used in %0.2f)
-		return \preg_replace("~(?<!%)((?:%{2})*)(%(?!0)\d+)(?!\\$)~", "$1$2\$s", $message);
+		return \preg_replace('~(?<!%)((?:%{2})*)(%(?!0)\d+)(?!\\$)~', '$1$2\\$s', $message);
 	}
-
 
 	public function __construct(ITranslator $translator) {
 		$this->translator = $translator;
 	}
-
 
 	public function dgettext($domain, $message) {
 		$message = $this->translator->dgettext($domain, $message);
@@ -57,11 +53,6 @@ class DollarTranslatorDecorator extends ATranslator {
 
 	public function pgettext($context, $message) {
 		$message = $this->translator->pgettext($context, $message);
-		return self::dollarReplace($message);
-	}
-
-	public function translate($message, $count = NULL) {
-		$message = $this->translator->translate($message, $count);
 		return self::dollarReplace($message);
 	}
 }

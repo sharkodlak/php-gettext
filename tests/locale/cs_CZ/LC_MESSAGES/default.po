@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: php-gettext\n"
-"POT-Creation-Date: 2016-02-04 18:23+0100\n"
-"PO-Revision-Date: 2016-02-04 19:07+0100\n"
+"POT-Creation-Date: 2016-02-04 21:52+0100\n"
+"PO-Revision-Date: 2016-02-04 22:19+0100\n"
 "Last-Translator: Pavel Štětina <github@shark.kom.cz>\n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
@@ -17,29 +17,80 @@ msgstr ""
 "p_:1c,2\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: ITranslatorTest.php:39 TranslatorTest.php:43 TranslatorTest.php:57
+#: DollarTranslatorDecoratorTest.php:26
+msgid "untranslated message %2 being downloaded from source %1"
+msgstr ""
+
+#: DollarTranslatorDecoratorTest.php:29
+msgid "message %2 being downloaded from source %1"
+msgstr "zpráva %2 se stahuje ze zdroje %1"
+
+#: DollarTranslatorDecoratorTest.php:82 DollarTranslatorDecoratorTest.php:84
+msgid "%1 untranslated singular"
+msgid_plural "%2 untranslated plurals"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: DollarTranslatorDecoratorTest.php:87 DollarTranslatorDecoratorTest.php:89
+#: DollarTranslatorDecoratorTest.php:91
+msgid "%1 singular"
+msgid_plural "%1 plurals"
+msgstr[0] "%1 jednotné číslo"
+msgstr[1] "%1 množná čísla"
+msgstr[2] "%1 množných čísel"
+
+#: DollarTranslatorDecoratorTest.php:96 DollarTranslatorDecoratorTest.php:98
+msgctxt "firstContext"
+msgid "%1 untranslated singular"
+msgid_plural "%2 untranslated plurals"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: DollarTranslatorDecoratorTest.php:101
+#: DollarTranslatorDecoratorTest.php:103
+#: DollarTranslatorDecoratorTest.php:105
+msgctxt "firstContext"
+msgid "%1 singular"
+msgid_plural "%1 plurals"
+msgstr[0] "%1 jednotné číslo s kontextem"
+msgstr[1] "%1 množná čísla s kontextem"
+msgstr[2] "%1 množných čísel s kontextem"
+
+#: DollarTranslatorDecoratorTest.php:110
+msgctxt "firstContext"
+msgid "untranslated message %2 being downloaded from source %1"
+msgstr ""
+
+#: DollarTranslatorDecoratorTest.php:113
+msgctxt "firstContext"
+msgid "message %2 being downloaded from source %1"
+msgstr "zpráva %2 s kontextem se stahuje ze zdroje %1"
+
+#: ITranslatorTest.php:39 TranslatorTest.php:54 TranslatorTest.php:68
 msgid "untranslated message"
 msgstr ""
 
-#: ITranslatorTest.php:42 TranslatorTest.php:45 TranslatorTest.php:48
-#: TranslatorTest.php:66
+#: ITranslatorTest.php:42 TranslatorTest.php:32 TranslatorTest.php:56
+#: TranslatorTest.php:59 TranslatorTest.php:77
 msgid "simple message"
 msgstr "jednoduchá zpráva"
 
-#: ITranslatorTest.php:64 TranslatorTest.php:140
+#: ITranslatorTest.php:64 TranslatorTest.php:151
 msgctxt "firstContext"
 msgid "untranslated message with context"
 msgstr ""
 
-#: ITranslatorTest.php:67 TranslatorTest.php:143
+#: ITranslatorTest.php:67 TranslatorTest.php:154
 msgctxt "firstContext"
 msgid "message with context"
 msgstr "zpráva s kontextem"
 
 #: ITranslatorTest.php:96 ITranslatorTest.php:98 ITranslatorTest.php:101
-#: ITranslatorTest.php:103 ITranslatorTest.php:105 TranslatorTest.php:126
-#: TranslatorTest.php:128 TranslatorTest.php:131 TranslatorTest.php:133
-#: TranslatorTest.php:135
+#: ITranslatorTest.php:103 ITranslatorTest.php:105 TranslatorTest.php:137
+#: TranslatorTest.php:139 TranslatorTest.php:142 TranslatorTest.php:144
+#: TranslatorTest.php:146
 #, php-format
 msgctxt "firstContext"
 msgid "singular with context"
@@ -48,14 +99,14 @@ msgstr[0] "jednotné číslo s kontextem"
 msgstr[1] "%d množná čísla s kontextem"
 msgstr[2] "%d množných čísel s kontextem"
 
-#: TranslatorTest.php:112 TranslatorTest.php:114
+#: TranslatorTest.php:123 TranslatorTest.php:125
 msgid "untranslated singular"
 msgid_plural "untranslated plural"
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: TranslatorTest.php:117 TranslatorTest.php:119 TranslatorTest.php:121
+#: TranslatorTest.php:128 TranslatorTest.php:130 TranslatorTest.php:132
 #, php-format
 msgid "singular"
 msgid_plural "%d plurals"
