@@ -9,25 +9,25 @@ class ITranslatorTest extends \PHPUnit_Framework_TestCase {
 		'dnpgettext' => false,
 		'npgettext' => false,
 	];
+
 	public static function setUpBeforeClass() {
 		foreach (self::$functionExists as $functionName => $exists) {
 			self::$functionExists[$functionName] = function_exists($functionName);
 		}
-		require_once __DIR__ . "/../src/ITranslator.php";
+		require_once __DIR__ . '/../src/ITranslator.php';
 		$domains = ['default', 'client'];
-		$localeDir = __DIR__ . '/locale';
 		foreach ($domains as $domain) {
-			bindtextdomain($domain, $localeDir);
+			bindtextdomain($domain, __DIR__ . '/locale');
 			bind_textdomain_codeset($domain, 'UTF-8');
 		}
 	}
 
 	private function setlocaleCs() {
-		setlocale(LC_MESSAGES, 'cs_CZ.UTF-8');
+		setlocale(LC_MESSAGES, 'cs_CZ.UTF-8', 'cs_CZ', 'cs');
 	}
 
 	private function setlocaleEn() {
-		setlocale(LC_MESSAGES, 'en_US.UTF-8');
+		setlocale(LC_MESSAGES, 'en_US.UTF-8', 'en_US', 'en');
 	}
 
 	public function setUp() {
@@ -36,8 +36,8 @@ class ITranslatorTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testGettext() {
-		$translation = gettext('simple message');
-		$this->assertEquals('simple message', $translation);
+		$translation = gettext('missing message');
+		$this->assertEquals('missing message', $translation);
 		$this->setlocaleCs();
 		$translation = gettext('simple message');
 		$this->assertEquals('jednoduchá zpráva', $translation);
