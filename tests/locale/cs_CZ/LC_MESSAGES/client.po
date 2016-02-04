@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: php-gettext client's translations\n"
-"POT-Creation-Date: 2016-02-02 23:58+0100\n"
-"PO-Revision-Date: 2016-02-03 00:07+0100\n"
+"POT-Creation-Date: 2016-02-04 16:27+0100\n"
+"PO-Revision-Date: 2016-02-04 17:33+0100\n"
 "Last-Translator: Pavel Štětina <github@shark.kom.cz>\n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
@@ -11,22 +11,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.4\n"
 "X-Poedit-Basepath: ../../..\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : "
+"2;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: dpgettext:2c,3;dnpgettext:2c,3,4\n"
+"X-Poedit-KeywordsList: dpgettext:2c,3;dnpgettext:2c,3,4;d_:2;dn_:2,3;"
+"dnp_:2c,3,4;dp_:2c,3\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: ITranslatorTest.php:39 ITranslatorTest.php:42
-msgid "simple message"
+#: ITranslatorTest.php:39 TranslatorTest.php:40 TranslatorTest.php:54
+msgid "untranslated message"
 msgstr ""
+
+#: ITranslatorTest.php:42 TranslatorTest.php:42 TranslatorTest.php:45
+#: TranslatorTest.php:61 TranslatorTest.php:63
+msgid "simple message"
+msgstr "jednoduchá klientská zpráva"
 
 #: ITranslatorTest.php:52 ITranslatorTest.php:55
 msgctxt "firstContext"
 msgid "message with context"
 msgstr "klientská zpráva s kontextem"
 
-#: ITranslatorTest.php:78 ITranslatorTest.php:80 ITranslatorTest.php:83
-#: ITranslatorTest.php:85 ITranslatorTest.php:87
+#: ITranslatorTest.php:78 ITranslatorTest.php:80
+#: ITranslatorTest.php:83 ITranslatorTest.php:85
+#: ITranslatorTest.php:87 TranslatorTest.php:89 TranslatorTest.php:91
+#: TranslatorTest.php:93
 #, php-format
 msgctxt "firstContext"
 msgid "singular with context"
@@ -34,3 +43,34 @@ msgid_plural "%d plurals with context"
 msgstr[0] "klientské jednotné číslo s kontextem"
 msgstr[1] "%d klientská množná čísla s kontextem"
 msgstr[2] "%d klientských množných čísel s kontextem"
+
+#: TranslatorTest.php:50 TranslatorTest.php:57
+msgid "Czech Republic"
+msgstr ""
+
+#: TranslatorTest.php:52 TranslatorTest.php:59
+msgid "Czech"
+msgstr ""
+
+#: TranslatorTest.php:69 TranslatorTest.php:71
+msgid "untranslated singular"
+msgid_plural "untranslated plural"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: TranslatorTest.php:74 TranslatorTest.php:76 TranslatorTest.php:78
+#, php-format
+msgid "singular"
+msgid_plural "%d plurals"
+msgstr[0] "klientské jednotné číslo"
+msgstr[1] "%d klientská množná čísla"
+msgstr[2] "%d klientských množných čísel"
+
+#: TranslatorTest.php:84 TranslatorTest.php:86
+msgctxt "firstContext"
+msgid "untranslated singular with context"
+msgid_plural "untranslated plural with context"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""

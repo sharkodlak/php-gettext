@@ -36,8 +36,8 @@ class ITranslatorTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testGettext() {
-		$translation = gettext('missing message');
-		$this->assertEquals('missing message', $translation);
+		$translation = gettext('untranslated message');
+		$this->assertEquals('untranslated message', $translation);
 		$this->setlocaleCs();
 		$translation = gettext('simple message');
 		$this->assertEquals('jednoduchá zpráva', $translation);
@@ -61,8 +61,8 @@ class ITranslatorTest extends \PHPUnit_Framework_TestCase {
 		if (self::$functionExists['pgettext']) {
 			$this->markTestSkipped('Function pgettext already defined');
 		} else {
-			$translation = pgettext('firstContext', 'message with context');
-			$this->assertEquals('message with context', $translation);
+			$translation = pgettext('firstContext', 'untranslated message with context');
+			$this->assertEquals('untranslated message with context', $translation);
 			$this->setlocaleCs();
 			$translation = pgettext('firstContext', 'message with context');
 			$this->assertEquals('zpráva s kontextem', $translation);

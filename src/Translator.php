@@ -8,7 +8,6 @@ class Translator extends ATranslator {
 
 	public function __construct($dir, $domain = 'default', $codeset = 'UTF-8') {
 		$this->setDomain($dir, $domain, $codeset);
-		textdomain($domain);
 	}
 
 	final public function setDomain($dir, $domain, $codeset = 'UTF-8') {
@@ -53,18 +52,22 @@ class Translator extends ATranslator {
 	}
 
 	public function gettext($message) {
+		textdomain(reset($this->domains));
 		return gettext($message);
 	}
 
 	public function ngettext($singular, $plural, $count) {
+		textdomain(reset($this->domains));
 		return ngettext($singular, $plural, $count);
 	}
 
 	public function npgettext($context, $singular, $plural, $count) {
+		textdomain(reset($this->domains));
 		return npgettext($context, $singular, $plural, $count);
 	}
 
 	public function pgettext($context, $message) {
+		textdomain(reset($this->domains));
 		return pgettext($context, $message);
 	}
 }
