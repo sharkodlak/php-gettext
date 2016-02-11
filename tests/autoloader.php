@@ -1,5 +1,7 @@
 <?php
+
 define('ROOT_DIR', realpath(__DIR__ . '/..'));
+
 spl_autoload_register(function ($className) {
 	$namespace = 'Sharkodlak\\Gettext\\';
 	$namespaceLength = strlen($namespace);

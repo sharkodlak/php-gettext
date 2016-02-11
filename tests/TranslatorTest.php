@@ -3,9 +3,9 @@
 namespace Sharkodlak\Gettext;
 
 class TranslatorTest extends \PHPUnit_Framework_TestCase {
-	static private $translator;
+	private static $translator;
 
-	static public function setUpBeforeClass() {
+	public static function setUpBeforeClass() {
 		self::$translator = new Translator(__DIR__ . '/locale', 'default');
 		self::$translator->setDomainWithAlias('countries', '/usr/share/locale', 'iso_3166');
 		self::$translator->setDomainWithAlias('languages', '/usr/share/locale', 'iso_639');

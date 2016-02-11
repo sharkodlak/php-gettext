@@ -3,9 +3,9 @@
 namespace Sharkodlak\Gettext;
 
 class DollarTranslatorDecoratorTest extends \PHPUnit_Framework_TestCase {
-	static private $translator;
+	private static $translator;
 
-	static public function setUpBeforeClass() {
+	public static function setUpBeforeClass() {
 		$translator = new Translator(__DIR__ . '/locale', 'default');
 		$translator->setDomain(__DIR__ . '/locale', 'client');
 		self::$translator = new DollarTranslatorDecorator($translator);
@@ -24,7 +24,7 @@ class DollarTranslatorDecoratorTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function dollarReplaceTest() {
-		$replaced = DollarTranslatorDecorator::dollarReplace('Test %3$d placeholders %1 with %%%2 signs but ignore %%4.');
+		$replaced = self::$translator->dollarReplace('Test %3$d placeholders %1 with %%%2 signs but ignore %%4.');
 		$this->assertEquals('Test %3$d placeholders %1$s with %%%2$s signs but ignore %%4.', $replaced);
 	}
 
@@ -33,6 +33,15 @@ class DollarTranslatorDecoratorTest extends \PHPUnit_Framework_TestCase {
 		$this->assertEquals('untranslated message %2$s being downloaded from source %1$s', $translation);
 		$this->setlocaleCs();
 		$translation = self::$translator->_('message %2 being downloaded from source %1');
+		$this->assertEquals('zpráva %2$s se stahuje ze zdroje %1$s', $translation);
+	}
+
+	public function testDoubleDecoration() {
+		$translator = new DollarTranslatorDecorator(self::$translator);
+		$translation = $translator->_('untranslated message %2 being downloaded from source %1');
+		$this->assertEquals('untranslated message %2$s being downloaded from source %1$s', $translation);
+		$this->setlocaleCs();
+		$translation = $translator->_('message %2 being downloaded from source %1');
 		$this->assertEquals('zpráva %2$s se stahuje ze zdroje %1$s', $translation);
 	}
 

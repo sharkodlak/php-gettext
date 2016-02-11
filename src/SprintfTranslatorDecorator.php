@@ -2,31 +2,22 @@
 
 namespace Sharkodlak\Gettext;
 
-
-/** Decorator for \Nette\ITranslator which performs sprintf on translated message.
+/** Decorator for Translator which performs sprintf on translated message.
  **/
 class SprintfTranslatorDecorator extends ATranslator {
 	private $translator;
-
-
-	public function __construct(ITranslator $translator) {
-		$this->translator = $translator;
-	}
-
 
 	private function callMethodAndSprintf($method, array $args, $methodArgsNumber) {
 		$methodArgs = array_splice($args, 0, $methodArgsNumber);
 		// translate using primary translator
 		$callback = array($this->translator, $method);
 		$message = call_user_func_array($callback, $methodArgs);
-
 		// modify message with spare arguments just like sprintf
-		error_log(var_export($message, true));
+		return vsprintf($message, $args);
+	}
 
-		$message = vsprintf($message, $args);
-		error_log(var_export($message, true));
-
-		return $message;
+	public function __construct(ITranslator $translator) {
+		$this->translator = $translator;
 	}
 
 	public function dgettext($domain, $message) {
@@ -87,22 +78,6 @@ class SprintfTranslatorDecorator extends ATranslator {
 	public function pgettext($context, $message) {
 		$args = func_get_args();
 		$methodArgsNumber = 2;
-		$message = $this->callMethodAndSprintf(__FUNCTION__, $args, $methodArgsNumber);
-		return $message;
-	}
-
-	/** Translates the given string.
-	 *
-	 * @deprecated
-	 **/
-	public function translate($message, $count = NULL) {
-		$args = func_get_args();
-		$methodArgsNumber = 2;
-
-		if (isset($count) && count($args) == 2) {
-			$args[] = array($count);
-		}
-
 		$message = $this->callMethodAndSprintf(__FUNCTION__, $args, $methodArgsNumber);
 		return $message;
 	}
