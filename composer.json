@@ -24,12 +24,13 @@
 		"lib-pcre": "*"
 	},
 	"require-dev": {
-		"squizlabs/php_codesniffer": "*",
-		"phpmd/phpmd": "*",
-		"sebastian/phpcpd": "*",
 		"pdepend/pdepend": "*",
 		"phploc/phploc": "*",
+		"phpmd/phpmd": "*",
 		"phpunit/phpunit": "*",
+		"sebastian/phpcpd": "*",
+		"sharkodlak/coding-style": "*",
+		"squizlabs/php_codesniffer": "*",
 		"theseer/phpdox": "*"
 	},
 	"support": {
