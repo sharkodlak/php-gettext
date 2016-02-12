@@ -6,7 +6,7 @@ class DollarTranslatorDecoratorTest extends \PHPUnit_Framework_TestCase {
 	private static $translator;
 
 	public static function setUpBeforeClass() {
-		$translator = new Translator(__DIR__ . '/locale', 'default');
+		$translator = new BasicTranslator(__DIR__ . '/locale', 'default');
 		$translator->setDomain(__DIR__ . '/locale', 'client');
 		self::$translator = new DollarTranslatorDecorator($translator);
 	}

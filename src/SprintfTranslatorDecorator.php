@@ -4,7 +4,7 @@ namespace Sharkodlak\Gettext;
 
 /** Decorator for Translator which performs sprintf on translated message.
  **/
-class SprintfTranslatorDecorator extends ATranslator {
+class SprintfTranslatorDecorator extends TranslatorBase {
 	private $translator;
 
 	private function callMethodAndSprintf($method, array $args, $methodArgsNumber) {
@@ -16,7 +16,7 @@ class SprintfTranslatorDecorator extends ATranslator {
 		return vsprintf($message, $args);
 	}
 
-	public function __construct(ITranslator $translator) {
+	public function __construct(Translator $translator) {
 		$this->translator = $translator;
 	}
 

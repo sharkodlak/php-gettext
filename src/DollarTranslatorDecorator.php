@@ -2,12 +2,12 @@
 
 namespace Sharkodlak\Gettext;
 
-/** Adds sprintf dollar notation if it's missing.
+/** Adds dollar to '%1' placeholder to convert it to '%1$s', which is usable in sprintf.
  */
-class DollarTranslatorDecorator extends ATranslator {
+class DollarTranslatorDecorator extends TranslatorBase {
 	private $translator;
 
-	public function __construct(ITranslator $translator) {
+	public function __construct(Translator $translator) {
 		$this->translator = $translator;
 	}
 
