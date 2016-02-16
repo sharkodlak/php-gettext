@@ -5,8 +5,10 @@
 		"gettext",
 		"i18n",
 		"l10n",
+		"locale",
 		"localization",
-		"translate"
+		"translate",
+		"translation"
 	],
 	"homepage": "https://github.com/Sharkodlak/php-gettext",
 	"license": "MIT",
@@ -39,7 +41,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Sharkodlak\\Libs\\Gettext\\": "src/"
+			"Sharkodlak\\Gettext\\": "src/"
 		}
 	}
 }
