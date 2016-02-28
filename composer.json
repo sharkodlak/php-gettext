@@ -1,5 +1,5 @@
 {
-	"name": "sharkodlak/php-gettext",
+	"name": "sharkodlak/gettext",
 	"description": "PHP Gettext Library, allow to use translator object with more gettext methods, than in pure PHP.",
 	"keywords": [
 		"gettext",
